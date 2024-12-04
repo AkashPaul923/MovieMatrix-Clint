@@ -5,6 +5,9 @@ import Home from "../Layout/Home";
 import AllMovies from "../Layout/AllMovies";
 import AddMovies from "../Layout/AddMovies";
 import MyFavorites from "../Layout/MyFavorites";
+import Auth from "../Layout/Auth";
+import Register from "../Components/Register";
+import Login from "../Components/Login";
 
 
 const router = createBrowserRouter([
@@ -28,6 +31,20 @@ const router = createBrowserRouter([
             {
                 path: '/myfavorites',
                 element: <MyFavorites></MyFavorites>,
+            },
+            {
+                path: '/auth',
+                element: <Auth></Auth>,
+                children:[
+                    {
+                        path: "/auth/register",
+                        element: <Register></Register>,
+                    },
+                    {
+                        path: "/auth/login",
+                        element: <Login></Login>,
+                    },
+                ]
             },
         ],
     }
