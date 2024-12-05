@@ -8,6 +8,7 @@ import MyFavorites from "../Layout/MyFavorites";
 import Auth from "../Layout/Auth";
 import Register from "../Components/Register";
 import Login from "../Components/Login";
+import PrivateRoute from "../Auth/PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addmovies',
-                element: <AddMovies></AddMovies>,
+                element: <PrivateRoute><AddMovies></AddMovies></PrivateRoute>,
             },
             {
                 path: '/myfavorites',
-                element: <MyFavorites></MyFavorites>,
+                element: <PrivateRoute><MyFavorites></MyFavorites></PrivateRoute>,
             },
             {
                 path: '/auth',
