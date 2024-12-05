@@ -10,7 +10,14 @@ const Navbar = () => {
       <li><NavLink to="/addmovies">Add Movies</NavLink></li>
       <li><NavLink to="/myfavorites">My Favorites</NavLink></li>
   </>
-  const { user } = useContext( AuthContext )
+  const { user, handleSignOut, loader } = useContext( AuthContext )
+
+  const handleLogOut = () =>{
+    handleSignOut()
+    .then(res =>{
+        // toast.success("Successfully LogOut")
+    })
+   }
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -58,8 +65,9 @@ const Navbar = () => {
               </div>
           }
           {
+            loader? "" :
             user ? 
-            <div><button className="btn">LogOut</button></div>
+            <div><button onClick={handleLogOut} className="btn">LogOut</button></div>
             :
             <div>
               <Link to="/auth/login" className="btn">Login</Link>

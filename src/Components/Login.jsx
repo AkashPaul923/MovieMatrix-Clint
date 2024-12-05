@@ -3,17 +3,37 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 // import { toast } from "react-toastify";
 import { LuEyeOff, LuEye } from "react-icons/lu";
+import { AuthContext } from "../Auth/AuthProvider";
 
 const Login = () => {
   const [seePass, setSeePass] = useState(true);
   const emailRef = useRef();
+  const { handleSignIn, handleGoogleSignIn } = useContext( AuthContext )
+  const location = useLocation()
+  console.log(location.state);
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
-    
+    handleSignIn( email, password )
+    .then(res => {
+        navigate( location?.state ? location.state : "/")
+        // toast.success("Successfully Login")
+    })
+    .catch(res =>{
+      // toast.error("Email Or Password incorrect")
+    })
   };
+  const handleGoogle = () => {
+    handleGoogleSignIn()
+    .then(res=>{
+      navigate( location?.state ? location.state : "/")
+      toast.success("Successfully Login")
+    })
+  }
+
   
 
   return (
@@ -27,7 +47,7 @@ const Login = () => {
 
         <div className="card max-w-lg mx-auto  w-full shrink-0">
           <button
-            // onClick={handleGoogle}
+            onClick={handleGoogle}
             className="btn btn-outline btn-info text-center mx-auto flex"
           >
             <FaGoogle></FaGoogle> <span>Login with Google</span>

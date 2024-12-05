@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 // import { toast } from "react-toastify";
-import { FaRegEye } from "react-icons/fa";
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { AuthContext } from "../Auth/AuthProvider";
 
