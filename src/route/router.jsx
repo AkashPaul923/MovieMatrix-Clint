@@ -9,6 +9,7 @@ import Auth from "../Layout/Auth";
 import Register from "../Components/Register";
 import Login from "../Components/Login";
 import PrivateRoute from "../Auth/PrivateRoute";
+import MovieDetail from "../Layout/MovieDetail";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
             {
                 path: '/allmovies',
                 element: <AllMovies></AllMovies>,
+                loader: ()=> fetch('http://localhost:5000/movies')
+            },
+            {
+                path: '/movies/:id',
+                element: <PrivateRoute><MovieDetail></MovieDetail></PrivateRoute>,
+                loader: ({params})=> fetch(`http://localhost:5000/movies/${id}`)
             },
             {
                 path: '/addmovies',
