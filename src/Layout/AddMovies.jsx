@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Rating } from "react-simple-star-rating";
 import { FaStar } from "react-icons/fa";
+import Swal from 'sweetalert2'
+import { AuthContext } from "../Auth/AuthProvider";
 
 
 const AddMovies = () => {
+    const { user } = useContext( AuthContext)
     const genres = ["Comedy", "Drama", "Horror", "Action", "Romance", "Thriller"];
     const years = [2024, 2023, 2022, 2021, 2020, 2019];
     const [rating, setRating] = useState(0)
@@ -16,10 +19,35 @@ const AddMovies = () => {
         const title = form.title.value
         const genre = form.genre.value
         const year = form.year.value
-        const duration = form.duration.value
+        const duration = parseInt(form.duration.value)
         const summery = form.summery.value
-        console.log(duration);
-        console.log({poster, title, genre, year, rating, duration, summery});
+        const email = user.email
+        const newMovie = {poster, title, genre, year, rating, duration, summery, email}
+        // console.log(duration);
+        console.log(newMovie);
+
+        fetch('http://localhost:5000/movies',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(newMovie)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                  title: 'Success!',
+                  text: 'Add Movie successfully',
+                  icon: 'success',
+                  confirmButtonText: 'cancel'
+                })
+                form.reset()
+                setRating(0)
+            }
+
+        })
     }
 
     const handleRating = (star) => {
@@ -74,7 +102,7 @@ const AddMovies = () => {
                         className="input input-bordered"
                         required
                     >
-                        <option value="" disabled>Choose one</option>
+                        <option value="" >Choose one</option>
                         {
                             genres.map((genre, idx)=><option key={idx} value={genre}>{genre}</option>)
                         }
@@ -90,7 +118,7 @@ const AddMovies = () => {
                         className="input input-bordered"
                         required
                     >
-                        <option value="" disabled>Choose one</option>
+                        <option value="" >Choose one</option>
                         {
                             years.map((year, idx)=><option key={idx} value={year}>{year}</option>)
                         }
