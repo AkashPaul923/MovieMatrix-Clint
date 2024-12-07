@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../Auth/AuthProvider";
 
 const MovieDetail = () => {
+    const {user} = useContext( AuthContext )
+    const {email} = user
     const movie = useLoaderData()
     const {poster, title, genre, year, rating, duration, summery, _id} = movie
     console.log(movie);
@@ -35,6 +39,29 @@ const MovieDetail = () => {
             })
           });
     }
+
+    const handleAddFavorite = () =>{
+        console.log('clicked')
+        const newFavorite = {poster, title, genre, year, rating, duration, summery, email}
+        fetch('http://localhost:5000/favorites',{
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(newFavorite),
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                  title: 'Success!',
+                  text: 'Add Movie Favorite successfully',
+                  icon: 'success',
+                  confirmButtonText: 'cancel'
+                })
+            }
+        })
+    }
     return (
         <div className="py-24">
             <div className="max-w-5xl mx-auto gap-10 grid grid-cols-1 md:grid-cols-12 p-5 lg:p-10 border border-red-500">
@@ -50,7 +77,8 @@ const MovieDetail = () => {
                     <p className="text-lg font-semibold">Rating: {rating}/5</p>
                     <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-12">Delete</button>
-                        <button className="btn">Add favorite</button>
+                        <button  className="btn mr-12">Update</button>
+                        <button onClick={handleAddFavorite} className="btn">Add favorite</button>
                     </div>
                 </div>
             </div>
