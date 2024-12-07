@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/movies/:id',
                 element: <PrivateRoute><MovieDetail></MovieDetail></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/movies/${id}`)
+                loader: ({params})=> fetch(`http://localhost:5000/movies/${params.id}`)
             },
             {
                 path: '/addmovies',
