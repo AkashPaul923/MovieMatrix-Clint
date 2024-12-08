@@ -47,7 +47,7 @@ const UpdateMovie = () => {
             return toast.error("Summary must be at least 10 characters.")
           }
 
-        fetch(`http://localhost:5000/movies/${_id}`,{
+        fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

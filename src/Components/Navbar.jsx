@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import Theme from "./Theme";
+import { toast } from "react-toastify";
 
 
 const Navbar = () => {
@@ -17,12 +18,12 @@ const Navbar = () => {
   const handleLogOut = () =>{
     handleSignOut()
     .then(res =>{
-        // toast.success("Successfully LogOut")
+        toast.success("Successfully LogOut")
     })
    }
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 max-w-screen-2xl mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

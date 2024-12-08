@@ -23,7 +23,7 @@ const MovieDetail = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             
-            fetch(`http://localhost:5000/movies/${_id}`, {
+            fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/${_id}`, {
                 method: 'DELETE'
             })
             .then(res=> res.json())
@@ -44,7 +44,7 @@ const MovieDetail = () => {
     const handleAddFavorite = () =>{
         console.log('clicked')
         const newFavorite = {poster, title, genre, year, rating, duration, summery, email}
-        fetch('http://localhost:5000/favorites',{
+        fetch('https://movie-portal-server-seven-gamma.vercel.app/favorites',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

@@ -6,7 +6,7 @@ const FeaturedMovie = () => {
     const [feMovies , setFeMovies] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/topmovies')
+        fetch('https://movie-portal-server-seven-gamma.vercel.app/topmovies')
         .then(res => res.json())
         .then(data => setFeMovies(data))
     },[])

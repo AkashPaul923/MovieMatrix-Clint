@@ -15,7 +15,7 @@ const FavoriteCard = ({ favorite, favorites, setFavorites }) => {
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
         
-        fetch(`http://localhost:5000/favorites/${_id}`, {
+        fetch(`https://movie-portal-server-seven-gamma.vercel.app/favorites/${_id}`, {
             method: 'DELETE'
         })
         .then(res=> res.json())

@@ -27,7 +27,7 @@ const router = createBrowserRouter([
             {
                 path: '/allmovies',
                 element: <AllMovies></AllMovies>,
-                loader: ()=> fetch('http://localhost:5000/movies')
+                loader: ()=> fetch('https://movie-portal-server-seven-gamma.vercel.app/movies')
             },
             {
                 path: '/contact',
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/movies/:id',
                 element: <PrivateRoute><MovieDetail></MovieDetail></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({params})=> fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/${params.id}`)
             },
             {
                 path: '/addmovies',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatemovies/:id',
                 element: <PrivateRoute><UpdateMovie></UpdateMovie></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({params}) => fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/${params.id}`)
             },
             {
                 path: '/myfavorites',

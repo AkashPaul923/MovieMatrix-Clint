@@ -48,7 +48,7 @@ const AddMovies = () => {
             return toast.error("Summary must be at least 10 characters.")
           }
 
-        fetch('http://localhost:5000/movies',{
+        fetch('https://movie-portal-server-seven-gamma.vercel.app/movies',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
