@@ -1,9 +1,9 @@
 import { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-// import { toast } from "react-toastify";
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [seePass, setSeePass] = useState(true);
@@ -16,14 +16,14 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     handleSignIn( email, password )
     .then(res => {
         navigate( location?.state ? location.state : "/")
-        // toast.success("Successfully Login")
+        toast.success("Successfully Login")
     })
     .catch(res =>{
-      // toast.error("Email Or Password incorrect")
+      toast.error("Email Or Password incorrect")
     })
   };
   const handleGoogle = () => {

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { AuthContext } from "../Auth/AuthProvider";
 
@@ -10,10 +10,10 @@ const Register = () => {
   const navigate = useNavigate()
 
     // // Check for an uppercase letter
-    // const hasUppercase = /(?=.*[A-Z])/;
+    const hasUppercase = /(?=.*[A-Z])/;
 
     // // Check for a lowercase letter
-    // const hasLowercase = /(?=.*[a-z])/;
+    const hasLowercase = /(?=.*[a-z])/;
     const [seePass , setSeePass] = useState( true )
 
   const handleSubmit = ( e ) =>{
@@ -22,16 +22,16 @@ const Register = () => {
     const photo = e.target.photo.value
     const email = e.target.email.value
     const password = e.target.password.value
-    console.log(name, photo, email, password);
-    // if(!hasUppercase.test(password)){
-    //   return toast.error("Must have an Uppercase letter in the password")
-    // }
-    // if(!hasLowercase.test(password)){
-    //   return toast.error("Must have a Lowercase letter in the password ")
-    // }
-    // if(password.length < 6){
-    //   return toast.error("Length must be at least 6 character ")
-    // }
+    // console.log(name, photo, email, password);
+    if(!hasUppercase.test(password)){
+      return toast.error("Must have an Uppercase letter in the password")
+    }
+    if(!hasLowercase.test(password)){
+      return toast.error("Must have a Lowercase letter in the password ")
+    }
+    if(password.length < 6){
+      return toast.error("Length must be at least 6 character ")
+    }
     handleRegister( email, password )
     .then((res) =>{
       manageProfile( name, photo )
@@ -39,17 +39,17 @@ const Register = () => {
         setUser({...res.user, displayName: name, photoURL : photo})
         navigate("/")
       })
-      // toast.success("Successfully register")
+      toast.success("Successfully register")
     })
     .catch(() =>{
-      // toast.error("User already exist")
+      toast.error("User already exist")
     })
   }
   const handleGoogle = () => {
     handleGoogleSignIn()
     .then(res=>{
       navigate("/")
-      // toast.success("Successfully Login")
+      toast.success("Successfully Login")
     })
   }
    

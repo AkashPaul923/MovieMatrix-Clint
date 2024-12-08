@@ -3,6 +3,7 @@ import { Rating } from "react-simple-star-rating";
 import { FaStar } from "react-icons/fa";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../Auth/AuthProvider";
+import { toast } from "react-toastify";
 
 
 const AddMovies = () => {
@@ -24,7 +25,28 @@ const AddMovies = () => {
         const email = user.email
         const newMovie = {poster, title, genre, year, rating, duration, summery, email}
         // console.log(duration);
-        console.log(newMovie);
+        // console.log(newMovie);
+        if (!poster || !/^https?:\/\/.+\..+/.test(poster)) {
+            return toast.error("Poster must be a valid URL.")
+          }
+          if (!title || title.length < 2) {
+            return toast.error("Title must be at least 2 characters.")
+          }
+          if (!genre) {
+            return toast.error("Please select a genre.")
+          }
+          if (!duration || duration <= 60) {
+            return toast.error("Duration must be greater than 60 minutes.")
+          }
+          if (!year) {
+            return toast.error("Please select a release year.")
+          }
+          if (rating === 0) {
+            return toast.error("Please select a rating.")
+          }
+          if (!summary || summary.length < 10) {
+            return toast.error("Summary must be at least 10 characters.")
+          }
 
         fetch('http://localhost:5000/movies',{
             method: 'POST',
