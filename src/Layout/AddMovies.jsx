@@ -44,8 +44,8 @@ const AddMovies = () => {
           if (rating === 0) {
             return toast.error("Please select a rating.")
           }
-          if (!summary || summary.length < 10) {
-            return toast.error("Summary must be at least 10 characters.")
+          if (!summery || summery.length < 10) {
+            return toast.error("summery must be at least 10 characters.")
           }
 
         fetch('https://movie-portal-server-seven-gamma.vercel.app/movies',{
@@ -57,13 +57,13 @@ const AddMovies = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            // console.log(data)
             if(data.insertedId){
                 Swal.fire({
                   title: 'Success!',
                   text: 'Add Movie successfully',
                   icon: 'success',
-                  confirmButtonText: 'cancel'
+                  confirmButtonText: 'OK'
                 })
                 form.reset()
                 setRating(0)

@@ -14,7 +14,7 @@ const FavoriteCard = ({ favorite, favorites, setFavorites }) => {
         cancelButtonColor: "#d33",
         confirmButtonText: "Yes, delete it!"
       }).then((result) => {
-        
+        if(result.isConfirmed){    
         fetch(`https://movie-portal-server-seven-gamma.vercel.app/favorites/${_id}`, {
             method: 'DELETE'
         })
@@ -31,6 +31,7 @@ const FavoriteCard = ({ favorite, favorites, setFavorites }) => {
             setFavorites(remaining)
         }
         })
+        }
       });
   }
   return (

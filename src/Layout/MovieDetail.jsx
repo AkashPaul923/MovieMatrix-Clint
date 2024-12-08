@@ -9,7 +9,7 @@ const MovieDetail = () => {
     const {email} = user
     const movie = useLoaderData()
     const {poster, title, genre, year, rating, duration, summery, _id} = movie
-    console.log(movie);
+    // console.log(movie);
     const navigate = useNavigate()
 
     const handleDelete = (_id) =>{
@@ -22,13 +22,13 @@ const MovieDetail = () => {
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
-            
+            if(result.isConfirmed){    
             fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/${_id}`, {
                 method: 'DELETE'
             })
             .then(res=> res.json())
             .then(data =>{
-                console.log(data);
+                // console.log(data);
                 if (data.deletedCount > 0) {
                     Swal.fire({
                     title: "Deleted!",
@@ -38,11 +38,12 @@ const MovieDetail = () => {
                 navigate('/allmovies')
             }
             })
+            }
           });
     }
 
     const handleAddFavorite = () =>{
-        console.log('clicked')
+        // console.log('clicked')
         const newFavorite = {poster, title, genre, year, rating, duration, summery, email}
         fetch('https://movie-portal-server-seven-gamma.vercel.app/favorites',{
             method: 'POST',
@@ -58,7 +59,7 @@ const MovieDetail = () => {
                   title: 'Success!',
                   text: 'Add Movie Favorite successfully',
                   icon: 'success',
-                  confirmButtonText: 'cancel'
+                  confirmButtonText: 'OK'
                 })
             }
         })

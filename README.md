@@ -5,12 +5,12 @@ MovieMatrix is a user-friendly Movie Portal to simplify the process of exploring
 
 
 ## Live Link
-Check out the live version of Eco Adventure here: [https://moviematrix-851d2.web.app/](#)
+Check out the live version of MovieMatrix here: [https://moviematrix-851d2.web.app/](#)
 
 ## Features
 
 - Database: MongoDB
-- Database CDUD Operation
+- Database CRUD Operation
 - Search Functionality
 - Firebase Authentication
 - Register and Login with email passward
