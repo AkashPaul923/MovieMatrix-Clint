@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
+import Theme from "./Theme";
 
 
 const Navbar = () => {
@@ -49,7 +50,8 @@ const Navbar = () => {
               }
             </ul>
           </div>
-          <p className="text-base md:text-2xl font-bold">MovieMatrix</p>
+          <p className="text-base md:text-2xl mr-5 font-bold">MovieMatrix</p>
+          <Theme></Theme>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -61,8 +63,10 @@ const Navbar = () => {
         <div className="navbar-end">
           {
             user && <div className="flex justify-center items-center gap-2">
-                <p>{user.displayName}</p>
-                <img className="h-10 w-10 rounded-full object-cover" src={user.photoURL} alt="" />
+                <div className="tooltip hover:tooltip-open tooltip-left" data-tip={user.displayName}>
+                  <img className="h-10 w-10 rounded-full object-cover" src={user.photoURL} alt="" />
+                </div>
+                
               </div>
           }
           {

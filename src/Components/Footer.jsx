@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className=" py-10">
+    <footer className="bg-gray-950 text-white py-10">
         <h1 className="text-3xl font-bold text-center mb-7">MovieMatrix</h1>
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Overview Section */}
@@ -23,13 +23,13 @@ const Footer = () => {
         <div>
           <h2 className="font-bold text-lg mb-4">Follow Us</h2>
           <div className="flex justify-center md:justify-start space-x-4">
-            <a href="#facebook" className="text-gray-600 hover:text-gray-900">
+            <a href="#facebook" className="text-gray-200 hover:text-gray-500">
               <FaFacebook size={24} />
             </a>
-            <a href="#instagram" className="text-gray-600 hover:text-gray-900">
+            <a href="#instagram" className="text-gray-200 hover:text-gray-500">
               <FaInstagram size={24} />
             </a>
-            <a href="#twitter" className="text-gray-600 hover:text-gray-900">
+            <a href="#twitter" className="text-gray-200 hover:text-gray-500">
               <FaTwitter size={24} />
             </a>
           </div>

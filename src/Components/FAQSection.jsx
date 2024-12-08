@@ -35,19 +35,22 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="bg-gray-900 text-white py-12 px-6">
+    <div className=" py-12 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <details key={index} className="bg-black rounded-md">
-              <summary className="cursor-pointer p-4 font-medium">
-                {faq.question}
-              </summary>
-              <div className="px-4 pb-4 text-gray-300">{faq.answer}</div>
-            </details>
+            <div className="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div className="collapse-title text-xl font-medium">
+              {faq.question}
+            </div>
+            <div className="collapse-content">
+              <p>{faq.answer}</p>
+            </div>
+          </div>
           ))}
         </div>
       </div>

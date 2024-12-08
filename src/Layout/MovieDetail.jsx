@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../Auth/AuthProvider";
+import { FaStar } from "react-icons/fa";
 
 const MovieDetail = () => {
     const {user} = useContext( AuthContext )
@@ -64,7 +65,7 @@ const MovieDetail = () => {
     }
     return (
         <div className="py-24">
-            <div className="max-w-5xl mx-auto gap-10 grid grid-cols-1 md:grid-cols-12 p-5 lg:p-10 border border-red-500">
+            <div className="max-w-5xl mx-auto gap-10 grid grid-cols-1 md:grid-cols-12 p-5 lg:p-10">
                 <div className="col-span-4">
                     <img className=" w-full h-full object-cover rounded-xl" src={poster} alt="" />
                 </div>
@@ -74,11 +75,11 @@ const MovieDetail = () => {
                     <p className="text-lg font-semibold">Genre: {genre}</p>
                     <p className="text-lg font-semibold">Release: {year}</p>
                     <p className="text-lg font-semibold">Duration: {duration} minutes</p>
-                    <p className="text-lg font-semibold">Rating: {rating}/5</p>
+                    <p className="text-lg font-semibold flex items-center gap-1">Rating: <FaStar className="text-yellow-500"></FaStar>{rating}/5</p>
                     <div>
-                        <button onClick={()=>handleDelete(_id)} className="btn mr-12">Delete</button>
-                        <Link to={`/updatemovies/${_id}`} className="btn mr-12">Update</Link>
-                        <button onClick={handleAddFavorite} className="btn">Add favorite</button>
+                        <button onClick={()=>handleDelete(_id)} className="btn btn-outline btn-secondary mr-12">Delete</button>
+                        <Link to={`/updatemovies/${_id}`} className="btn btn-outline btn-secondary mr-12">Update</Link>
+                        <button onClick={handleAddFavorite} className="btn btn-outline btn-secondary">Add favorite</button>
                     </div>
                 </div>
             </div>
