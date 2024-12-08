@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../Auth/AuthProvider";
 
@@ -77,7 +77,7 @@ const MovieDetail = () => {
                     <p className="text-lg font-semibold">Rating: {rating}/5</p>
                     <div>
                         <button onClick={()=>handleDelete(_id)} className="btn mr-12">Delete</button>
-                        <button  className="btn mr-12">Update</button>
+                        <Link to={`/updatemovies/${_id}`} className="btn mr-12">Update</Link>
                         <button onClick={handleAddFavorite} className="btn">Add favorite</button>
                     </div>
                 </div>
