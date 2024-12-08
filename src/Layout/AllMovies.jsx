@@ -6,12 +6,18 @@ const AllMovies = () => {
   const data = useLoaderData();
   const [movies, setMovies] = useState(data);
   const [search, setSearch] = useState('')
+  const [loader, setLoader] = useState(true)
   // console.log(movies);
 
   useEffect(()=>{
+    setMovies([])
+    setLoader(true)
     fetch(`https://movie-portal-server-seven-gamma.vercel.app/movies/?search=${search}`)
     .then(res => res.json())
-    .then(data => setMovies(data))
+    .then(data => {
+      setMovies(data)
+      setLoader(false)
+    })
   },[search])
 
 
@@ -38,7 +44,13 @@ const AllMovies = () => {
       <p className="text-center text-3xl font-bold my-8">
         All Movies ({movies.length})
       </p>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+      {
+          loader? <span className="loading loading-bars loading-lg mx-auto block"></span> : ""
+      }
+      {
+        movies.length === 0 && loader === false ? <div className="min-h-[500px] mt-20 text-center text-red-600 text-4xl font-bold">NO DATA FOUND</div>  : ""
+      }
+      <div className="max-w-6xl mx-auto min-h-[500px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         {movies.map((movie) => (
           <MovieCard key={movie._id} movie={movie}></MovieCard>
         ))}

@@ -10,7 +10,7 @@ const Login = () => {
   const emailRef = useRef();
   const { handleSignIn, handleGoogleSignIn } = useContext( AuthContext )
   const location = useLocation()
-  console.log(location.state);
+  // console.log(location.state);
   const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
