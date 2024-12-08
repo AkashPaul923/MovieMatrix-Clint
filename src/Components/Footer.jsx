@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 text-gray-800 py-10">
+    <footer className=" py-10">
         <h1 className="text-3xl font-bold text-center mb-7">MovieMatrix</h1>
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Overview Section */}

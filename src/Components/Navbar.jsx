@@ -9,6 +9,7 @@ const Navbar = () => {
       <li><NavLink to="/allmovies">All Movies</NavLink></li>
       <li><NavLink to="/addmovies">Add Movies</NavLink></li>
       <li><NavLink to="/myfavorites">My Favorites</NavLink></li>
+      <li><NavLink to="/contact">Contact Us</NavLink></li>
   </>
   const { user, handleSignOut, loader } = useContext( AuthContext )
 
@@ -48,7 +49,7 @@ const Navbar = () => {
               }
             </ul>
           </div>
-          <p className="text-xl">MovieMatrix</p>
+          <p className="text-base md:text-2xl font-bold">MovieMatrix</p>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -67,11 +68,11 @@ const Navbar = () => {
           {
             loader? "" :
             user ? 
-            <div><button onClick={handleLogOut} className="btn">LogOut</button></div>
+            <div><button onClick={handleLogOut} className="btn ml-3 btn-accent">Logout</button></div>
             :
             <div>
-              <Link to="/auth/login" className="btn">Login</Link>
-              <Link to="/auth/register" className="btn">Register</Link>
+              <Link to="/auth/login" className="btn btn-accent">Login</Link>
+              <Link to="/auth/register" className="btn ml-3 btn-outline btn-accent">Register</Link>
             </div>
           }
         </div>

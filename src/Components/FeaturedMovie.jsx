@@ -12,7 +12,7 @@ const FeaturedMovie = () => {
     },[])
     return (
         <div className='py-24'>
-            <p className="text-center text-3xl font-bold text-blue-950 my-10">Featured Movie</p>
+            <p className="text-center text-3xl font-bold my-10">Featured Movie</p>
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 {
                     feMovies.map( movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
