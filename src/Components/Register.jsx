@@ -55,8 +55,8 @@ const Register = () => {
    
   
   return (
-    <div className="bg-gradient-to-b from-blue-200 via-cyan-100 to-blue-200 py-20">
-      <div className="max-w-xl mx-auto bg-white py-10 border-2 rounded-2xl" data-aos="zoom-in" data-aos-duration="1000">
+    <div className=" py-20">
+      <div className="max-w-xl mx-auto bg-base-300 py-10 border-2 rounded-2xl" data-aos="zoom-in" data-aos-duration="1000">
         <h1 className="text-center font-bold text-3xl mb-5">Create an Account</h1>
         
         <div className="card max-w-lg mx-auto  w-full shrink-0">

@@ -1,8 +1,19 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# MovieMatrix
 
-Currently, two official plugins are available:
+MovieMatrix is a user-friendly Movie Portal to simplify the process of exploring movies, viewing movie details, adding movies, and deleting movies while managing user favorites. It has a dynamic user interface, robust functionality, and seamless user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Live Link
+Check out the live version of Eco Adventure here: [https://moviematrix-851d2.web.app/](#)
+
+## Features
+
+- Database: MongoDB
+- Database CDUD Operation
+- Search Functionality
+- Firebase Authentication
+- Register and Login with email passward
+- Login With Google
+- Private Route
+

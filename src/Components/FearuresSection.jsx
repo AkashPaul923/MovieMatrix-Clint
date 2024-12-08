@@ -46,7 +46,7 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="flex flex-col items-center  rounded-lg p-6 text-center border-2 transition"
+              className="flex flex-col items-center bg-base-300  rounded-lg p-6 text-center border-2 transition"
             >
               <div className="text-red-500 mb-4">{feature.icon}</div>
               <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>

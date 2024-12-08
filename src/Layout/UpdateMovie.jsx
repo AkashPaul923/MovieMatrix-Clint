@@ -78,9 +78,9 @@ const UpdateMovie = () => {
       }
     return (
         <div>
-            <div className="bg-gradient-to-b from-blue-200 via-cyan-100 to-blue-200 py-20">
+            <div className=" py-10">
         <div
-          className="max-w-xl mx-auto bg-white py-10 border-2 rounded-2xl"
+          className="max-w-xl mx-auto bg-base-300 py-10 border-2 rounded-2xl"
           data-aos="zoom-in"
           data-aos-duration="1000"
         >

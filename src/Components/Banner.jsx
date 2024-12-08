@@ -20,6 +20,7 @@ import banner5 from "../assets/banner5.jpg"
 import banner6 from "../assets/banner6.jpg"
 import banner7 from "../assets/banner7.jpg"
 import banner8 from "../assets/banner8.jpg"
+import banner9 from "../assets/banner9.jpg"
 
 
 const Banner = () => {
@@ -47,6 +48,7 @@ const Banner = () => {
                 <SwiperSlide><img src={banner6} alt="" className='w-full lg:max-h-[830px] object-cover' /></SwiperSlide>
                 <SwiperSlide><img src={banner7} alt="" className='w-full lg:max-h-[830px] object-cover' /></SwiperSlide>
                 <SwiperSlide><img src={banner8} alt="" className='w-full lg:max-h-[830px] object-cover' /></SwiperSlide>
+                <SwiperSlide><img src={banner9} alt="" className='w-full lg:max-h-[830px] object-cover' /></SwiperSlide>
             </Swiper>
         </div>
     );

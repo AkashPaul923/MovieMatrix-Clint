@@ -16,8 +16,8 @@ const MyFavorites = () => {
 
     return (
         <div>
-            <p className="text-center text-3xl font-bold my-10">My Favorites {favorites.length}</p>
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            <p className="text-center text-3xl font-bold my-10">My Favorites</p>
+            <div className="max-w-6xl mx-auto min-h-[500px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mb-14">
                 {
                     favorites.map(favorite => <FavoriteCard key={favorite._id} favorite={favorite} favorites={favorites} setFavorites={setFavorites}></FavoriteCard>)
                 }
