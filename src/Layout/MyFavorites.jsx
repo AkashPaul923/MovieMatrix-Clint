@@ -29,7 +29,7 @@ const MyFavorites = () => {
             {
                 favorites.length === 0 && loader === false  ? <div className="min-h-[400px] mt-20 text-center text-red-600 text-4xl font-bold">NO DATA FOUND</div>  : ""
             }
-            <div className="max-w-6xl mx-auto min-h-[500px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 mb-14">
+            <div className="max-w-screen-2xl mx-auto min-h-[500px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10 mb-14 px-5 md:px-10">
                 {
                     favorites.map(favorite => <FavoriteCard key={favorite._id} favorite={favorite} favorites={favorites} setFavorites={setFavorites}></FavoriteCard>)
                 }

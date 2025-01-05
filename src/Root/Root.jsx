@@ -27,7 +27,10 @@ const Root = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className="h-[70px]"></div>
+            <div className="min-h-screen">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
             <ToastContainer />
         </div>

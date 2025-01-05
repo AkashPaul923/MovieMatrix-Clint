@@ -22,8 +22,8 @@ const Navbar = () => {
     })
    }
   return (
-    <div className="bg-base-300">
-      <div className="navbar max-w-screen-2xl mx-auto">
+    <div className="bg-base-300 fixed  z-10 w-screen">
+      <div className="navbar px-5 md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -51,8 +51,8 @@ const Navbar = () => {
               }
             </ul>
           </div>
-          <p className="text-base md:text-2xl mr-5 font-bold">MovieMatrix</p>
-          <Theme></Theme>
+          <p className="text-base md:text-2xl font-bold">MovieMatrix</p>
+          
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -62,6 +62,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
+          <Theme></Theme>
           {
             user && <div className="flex justify-center items-center gap-2">
                 <div className="tooltip hover:tooltip-open tooltip-left" data-tip={user.displayName}>

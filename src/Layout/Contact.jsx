@@ -2,7 +2,7 @@ import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="py-12 px-6">
+    <div className="py-12 px-5 md:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Section */}
         <div>

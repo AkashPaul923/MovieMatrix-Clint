@@ -66,7 +66,7 @@ const MovieDetail = () => {
     }
     return (
         <div className="py-24">
-            <div className="max-w-5xl mx-auto gap-10 grid grid-cols-1 md:grid-cols-12 p-5 lg:p-10">
+            <div className="max-w-5xl mx-auto gap-10 grid grid-cols-1 md:grid-cols-12 p-5 md:px-10 lg:p-10">
                 <div className="col-span-4">
                     <img className=" w-full h-full object-cover rounded-xl" src={poster} alt="" />
                 </div>

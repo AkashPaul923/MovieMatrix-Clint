@@ -11,9 +11,9 @@ const FeaturedMovie = () => {
         .then(data => setFeMovies(data))
     },[])
     return (
-        <div className='py-24'>
+        <div className='py-12 px-5 md:px-10'>
             <p className="text-center text-3xl font-bold my-10">Featured Movie</p>
-            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-10">
                 {
                     feMovies.map( movie => <MovieCard key={movie._id} movie={movie}></MovieCard>)
                 }

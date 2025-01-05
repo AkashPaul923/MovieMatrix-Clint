@@ -13,7 +13,7 @@ const Theme = () => {
   };
   // onChange={toggleTheme} checked={theme === "dark"}
   return (
-    <div className="flex items-center">
+    <div className="flex items-center mr-5">
       <label className="swap swap-rotate">
         {/* this hidden checkbox controls the state */}
         <input type="checkbox" onChange={toggleTheme} className="theme-controller" value="synthwave" />

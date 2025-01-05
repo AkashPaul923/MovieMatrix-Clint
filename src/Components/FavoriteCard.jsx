@@ -35,7 +35,7 @@ const FavoriteCard = ({ favorite, favorites, setFavorites }) => {
       });
   }
   return (
-    <div className="bg-base-200 p-8 rounded-xl">
+    <div className="bg-base-200 p-4 rounded-xl">
       <figure className="">
         <img
           src={poster}
