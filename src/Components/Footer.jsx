@@ -1,5 +1,6 @@
 
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -10,8 +11,9 @@ const Footer = () => {
         <div>
           <h2 className="font-bold text-lg mb-4">Overview</h2>
           <ul className="space-y-2">
-            <li><a href="#about" className="hover:underline">About</a></li>
-            <li><a href="#help" className="hover:underline">Help Center</a></li>
+            <li><Link to="/allmovies" className="hover:underline">All Movies</Link></li>
+            <li><Link to="/addmovies" className="hover:underline">Add Movies</Link></li>
+            <li><Link to="/myfavorites" className="hover:underline">My Favorites</Link></li>
           </ul>
         </div>
 
@@ -33,16 +35,16 @@ const Footer = () => {
 
         {/* Explore Other Brands */}
         <div className='md:text-right'>
-          <h2 className="font-bold text-lg mb-4">Explore Other Brands</h2>
+          <h2 className="font-bold text-lg mb-4">Explore Other</h2>
           <ul className="space-y-2">
-            <li><a href="#gamespot" className="hover:underline">GameSpot</a></li>
+            <li><Link to="/contact" className="hover:underline">Contact Us</Link></li>
           </ul>
         </div>
       </div>
 
       <div className="text-center text-sm text-gray-500 mt-8">
         <p>
-          © 2024 MovirMatrix. All Rights Reserved.
+          © 2025 MovirMatrix. All Rights Reserved.
         </p>
       </div>
     </footer>

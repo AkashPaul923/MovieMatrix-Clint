@@ -13,9 +13,10 @@ const Navbar = () => {
       <li><NavLink to="/allmovies">All Movies</NavLink></li>
       <li><NavLink to="/addmovies">Add Movies</NavLink></li>
       <li><NavLink to="/myfavorites">My Favorites</NavLink></li>
-      <li><NavLink to="/contact">Contact Us</NavLink></li>
+      
       </>
       }
+      <li><NavLink to="/contact">Contact Us</NavLink></li>
   </>
   
 

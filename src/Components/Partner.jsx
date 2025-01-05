@@ -33,8 +33,8 @@ const partners = [
 const Partner = () => {
   return (
     <div className="bg-base-100 py-12 px-5 md:px-10">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
-        Proud Partners with:
+      <h2 className="text-3xl font-bold text-center mb-8">
+        Proud Partners with
       </h2>
       <div className="flex justify-center items-center flex-wrap gap-10">
         {partners.map((partner) => (
