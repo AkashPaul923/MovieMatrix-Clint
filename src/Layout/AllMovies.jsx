@@ -22,10 +22,10 @@ const AllMovies = () => {
 
   const handleSort = () => {
     setLoader(true)
-    console.log(movies);
+    // console.log(movies);
     const sorted = [...movies].sort((a, b) => b.rating - a.rating);
     console.log(sorted);
-    setMovies(sorted)
+    // setMovies(sorted)
     setLoader(false)
 
   }

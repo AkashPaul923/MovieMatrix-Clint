@@ -6,14 +6,18 @@ import { toast } from "react-toastify";
 
 
 const Navbar = () => {
+  const { user, handleSignOut, loader } = useContext( AuthContext )
   const links = <>
       <li><NavLink to="/">Home</NavLink></li>
+      {user && <>
       <li><NavLink to="/allmovies">All Movies</NavLink></li>
       <li><NavLink to="/addmovies">Add Movies</NavLink></li>
       <li><NavLink to="/myfavorites">My Favorites</NavLink></li>
       <li><NavLink to="/contact">Contact Us</NavLink></li>
+      </>
+      }
   </>
-  const { user, handleSignOut, loader } = useContext( AuthContext )
+  
 
   const handleLogOut = () =>{
     handleSignOut()
